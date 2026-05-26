@@ -115,6 +115,7 @@ var quizState={filtered:[],currentIdx:0,mode:'sequential',answers:{},showReview:
 ALL_Q.forEach(function(q,i){q._uid=i});
 
 function init(){
+document.querySelector('.header p').textContent='共 '+ALL_Q.length+' 题 | 单选题 + 多选题 | 即时判分 | 支持键盘方向键';
 var sections=[],sel=document.getElementById('section-filter');
 ALL_Q.forEach(function(q){var s=q.section.trim();if(sections.indexOf(s)===-1)sections.push(s)});
 sections.forEach(function(s){var o=document.createElement('option');o.value=s;o.textContent=s.length>25?s.substr(0,25)+'...':s;sel.appendChild(o)});
